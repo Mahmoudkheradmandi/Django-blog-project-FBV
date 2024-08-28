@@ -1,0 +1,15 @@
+{% load static %}
+
+<div class="single-sidebar-widget post-category-widget">
+    <h4 class="single-sidebar-widget__title">Category</h4>
+    <ul class="cat-list mt-20">
+      {% for category in categories %}
+        <li>
+          <a href="{% url "blog:category" cat_name=category.name %}" class="d-flex justify-content-between">
+            <p>{{ category.name }}</p>
+            <p>({{ category.num_posts }})</p> <!-- Display the number of posts in this category -->
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+</div>
